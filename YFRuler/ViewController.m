@@ -21,7 +21,7 @@
     [super viewDidLoad];
     
     [self ruler];
-    
+
     [self ruler_1];
     
     [self ruler_2];
@@ -52,14 +52,14 @@
     [self.view addSubview:view];
     
     YFRulerView *ruler = [YFRulerView new];
-    
+    ruler.rulerFace = YFRulerFace_Both;
     UIImage *image = [UIImage imageNamed:@"arrow"];
     UIImageView *imgView = [[UIImageView alloc] initWithImage:image];
     imgView.frame = CGRectMake(100-20/2.0, 60-10, 20, 10);
     ruler.pointerView = imgView;
     
     ruler.rulerDirection = YFRulerDirectionHorizontal;
-    ruler.rulerFace = YFRulerFace_Down_Right;
+    
     ruler.unitPadding = 20;
     ruler.unitCount = 5;
     ruler.txtColor = [UIColor blackColor];
@@ -75,12 +75,12 @@
     
     YFRulerView *ruler = [YFRulerView new];
     ruler.rulerDirection = YFRulerDirectionVertical;
-    ruler.rulerFace = YFRulerFace_Down_Right;
+    ruler.rulerFace = YFRulerFace_Up_Left;
     ruler.txtColor = [UIColor blackColor];
     ruler.txtPositionBottom  = YES;
-    ruler.txtPadding = 10;
-    ruler.pointerFrame = CGRectMake(0, 200/2.0-0.5, 50, 1);
-    ruler.pointerColor = [UIColor redColor];
+    ruler.txtPadding = 2;
+    ruler.pointerFrame = CGRectMake(80/2, 200/2.0-0.5, 40, 1);
+    ruler.pointerColor = [UIColor blueColor];
     ruler.rulerColor = [UIColor redColor];
     view.rulerView = ruler;
     [self.view addSubview:view];
@@ -94,9 +94,9 @@
     
     YFRulerView *ruler = [YFRulerView new];
     
-    ruler.minValue = -1000;
-    ruler.maxValue = 50000;
-    ruler.unitValue = 1000;
+    ruler.minValue = -0.3;
+    ruler.maxValue = 10;
+    ruler.unitValue = 0.1;
     ruler.unitCount = 5;
     
     ruler.rulerDirection = YFRulerDirectionVertical;

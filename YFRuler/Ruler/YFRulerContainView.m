@@ -81,8 +81,9 @@
 
 - (void)scrollToValue:(float)value animated:(BOOL)animated
 {
-    float padding = (int)(value / self.rulerView.unitValue) * self.rulerView.unitPadding;
-    
+    value = value > self.rulerView.maxValue ? self.rulerView.maxValue : value;
+    float padding = (int)((value - self.rulerView.minValue)/ self.rulerView.unitValue) * self.rulerView.unitPadding;
+
     if (self.rulerView.rulerDirection == YFRulerDirectionHorizontal) {
         [self.scrollView setContentOffset:CGPointMake(padding, 0) animated:animated];
     }else {

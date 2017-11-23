@@ -294,7 +294,7 @@
                     
                 }else {
                     if (self.rulerFace == YFRulerFace_Down_Right) {
-                        point.y -= self.txtPositionBottom ? self.txtPadding : self.txtPadding + textSize.height + self.l_height;
+                        point.y -= self.txtPositionBottom ? -self.txtPadding : self.txtPadding + textSize.height + self.l_height;
                     }else {
                         point.y -= self.txtPositionBottom ? self.txtPadding + textSize.height : -(self.txtPadding + self.l_height);
                     }
@@ -328,7 +328,7 @@
                     
                 }else {
                     if (self.rulerFace == YFRulerFace_Down_Right) {
-                        point.x -= self.txtPositionBottom ? self.txtPadding : self.txtPadding + textSize.width + self.l_height;
+                        point.x -= self.txtPositionBottom ? -self.txtPadding : self.txtPadding + textSize.width + self.l_height;
                     }else {
                         point.x -= self.txtPositionBottom ? self.txtPadding + textSize.width : -(self.txtPadding + self.l_height);
                     }

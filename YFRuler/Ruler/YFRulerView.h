@@ -60,7 +60,7 @@ typedef NS_ENUM(NSUInteger, YFTextFace) {
 @property (nonatomic, strong) NSDictionary *txtAttributes;
 /// 数字距离标尺  默认 
 @property (nonatomic, assign) float txtPadding;
-/// 标尺数字位置  默认标尺上
+/// 标尺数字位置  默认标尺上. 单边标尺NO才有效
 @property (nonatomic, assign) BOOL  txtPositionBottom;
 /// 双刻度时 数字两边都显示 默认NO
 @property (nonatomic, assign) YFTextFace txtFace;
