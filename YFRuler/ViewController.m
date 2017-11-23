@@ -93,17 +93,23 @@
     YFRulerContainView *view = [[YFRulerContainView alloc] initWithFrame:CGRectMake(120, 300, 120, 200)];
     
     YFRulerView *ruler = [YFRulerView new];
+    
+    ruler.minValue = -1000;
+    ruler.maxValue = 50000;
+    ruler.unitValue = 1000;
+    ruler.unitCount = 5;
+    
     ruler.rulerDirection = YFRulerDirectionVertical;
     ruler.rulerFace = YFRulerFace_Both;
     ruler.txtColor = [UIColor greenColor];
-    ruler.rulerWidth = 14;
+    ruler.rulerWidth = 2;
     ruler.rulerColor = [UIColor magentaColor];
     ruler.markColor = [UIColor blueColor];
-    ruler.unitWidth = 4;
-    ruler.unitPadding = 10;
+    ruler.unitWidth = 3;
+    ruler.unitPadding = 15;
     ruler.l_height = 20;
     ruler.s_height = 10;
-    ruler.txtPadding = 20;
+    ruler.txtPadding = 10;
     ruler.txtFace = YFTextFace_Up_Left;
 //    ruler.showRulerValue = NO;
     

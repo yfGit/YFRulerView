@@ -265,7 +265,7 @@
         
         // 文字
         if (self.isShowRulerValue && isHeight) {
-            NSString *text = @(i*self.unitValue).stringValue;
+            NSString *text = @(self.minValue + i*self.unitValue).stringValue;
             CGSize textSize = [self sizeForText:text attributes:attributes];
             
             if (self.rulerDirection == YFRulerDirectionHorizontal) {

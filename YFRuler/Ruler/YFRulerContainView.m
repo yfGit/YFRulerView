@@ -66,8 +66,9 @@
 {
     [super layoutSubviews];
     
+    // 直接配置不用再赋值 YFRulerView
     if (CGRectEqualToRect(self.scrollView.frame, CGRectZero)) {
-        [self layoutForDraw];
+        [self redrawRuler:self.rulerView];
     }
 }
 
