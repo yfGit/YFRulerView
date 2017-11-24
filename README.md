@@ -1,6 +1,7 @@
 # YFRulerView
 标尺
 
-![](ScreenShot.png)
-
+<p align="left" >
+  <img src="ScreenShot.png" alt="KYAnimatedPageControl" title="KYAnimatedPageControl" width = "280">
+</p>
 
