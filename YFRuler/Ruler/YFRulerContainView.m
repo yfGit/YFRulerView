@@ -56,20 +56,22 @@
     return self;
 }
 
-- (void)initialization
+- (instancetype)initWithCoder:(NSCoder *)coder
 {
-    self.animated = YES;
-    self.lastIndex = -1;
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    
-    // 直接配置不用再赋值 YFRulerView
-    if (CGRectEqualToRect(self.scrollView.frame, CGRectZero)) {
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self initialization];
+        
         [self redrawRuler:self.rulerView];
     }
+    return self;
+}
+
+- (void)initialization
+{
+    self.animated  = YES;
+    self.lastIndex = -1;
+    
 }
 
 #pragma mark - Event Response
@@ -98,7 +100,6 @@
     self.scrollView.frame = self.bounds;
     float length = (self.rulerView.maxValue - self.rulerView.minValue) / self.rulerView.unitValue * (self.rulerView.unitPadding);
     self.rulerView.contentMode = UIViewContentModeRedraw;
-    
     
     if (_rulerView.rulerDirection == YFRulerDirectionHorizontal) {
         self.scrollView.contentSize = CGSizeMake(self.bounds.size.width + length, self.scrollView.frame.size.height);
@@ -130,42 +131,19 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    if (self.rulerView.rulerDirection == YFRulerDirectionHorizontal) {
-        
-        NSInteger index = scrollView.contentOffset.x / self.rulerView.unitPadding + 0.5;
-        [scrollView setContentOffset:CGPointMake(index * self.rulerView.unitPadding, 0) animated:self.isAnimated];
-        if ([self.delegate respondsToSelector:@selector(yfRulerScrollEnd:endIndex:)]) {
-            [self.delegate yfRulerScrollEnd:self endIndex:index];
-        }
-    }
-    else {
-        NSInteger index = scrollView.contentOffset.y / self.rulerView.unitPadding + 0.5;
-        [scrollView setContentOffset:CGPointMake(0, index * self.rulerView.unitPadding) animated:self.isAnimated];
-        if ([self.delegate respondsToSelector:@selector(yfRulerScrollEnd:endIndex:)]) {
-            [self.delegate yfRulerScrollEnd:self endIndex:index];
-        }
-    }
+    [self endScrollWithScrollView:scrollView];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     if (!decelerate) {
-        if (self.rulerView.rulerDirection == YFRulerDirectionHorizontal) {
-            
-            NSInteger index = scrollView.contentOffset.x / self.rulerView.unitPadding + 0.5;
-            [scrollView setContentOffset:CGPointMake(index * self.rulerView.unitPadding, 0) animated:self.isAnimated];
-            if ([self.delegate respondsToSelector:@selector(yfRulerScrollEnd:endIndex:)]) {
-                [self.delegate yfRulerScrollEnd:self endIndex:index];
-            }
-        }
-        else {
-            NSInteger index = scrollView.contentOffset.y / self.rulerView.unitPadding + 0.5;
-            [scrollView setContentOffset:CGPointMake(0, index * self.rulerView.unitPadding) animated:self.isAnimated];
-            if ([self.delegate respondsToSelector:@selector(yfRulerScrollEnd:endIndex:)]) {
-                [self.delegate yfRulerScrollEnd:self endIndex:index];
-            }
-        }
+        [self endScrollWithScrollView:scrollView];
     }
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    [self endScrollWithScrollView:scrollView];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -187,6 +165,26 @@
             if ([self.delegate respondsToSelector:@selector(yfRulerScroll:currentIndex:)]) {
                 [self.delegate yfRulerScroll:self currentIndex:index];
             }
+        }
+    }
+}
+
+/// 结束滚动
+- (void)endScrollWithScrollView:(UIScrollView *)scrollView
+{
+    if (self.rulerView.rulerDirection == YFRulerDirectionHorizontal) {
+        
+        NSInteger index = scrollView.contentOffset.x / self.rulerView.unitPadding + 0.5;
+        [scrollView setContentOffset:CGPointMake(index * self.rulerView.unitPadding, 0) animated:self.isAnimated];
+        if ([self.delegate respondsToSelector:@selector(yfRulerScrollEnd:endIndex:)]) {
+            [self.delegate yfRulerScrollEnd:self endIndex:index];
+        }
+    }
+    else {
+        NSInteger index = scrollView.contentOffset.y / self.rulerView.unitPadding + 0.5;
+        [scrollView setContentOffset:CGPointMake(0, index * self.rulerView.unitPadding) animated:self.isAnimated];
+        if ([self.delegate respondsToSelector:@selector(yfRulerScrollEnd:endIndex:)]) {
+            [self.delegate yfRulerScrollEnd:self endIndex:index];
         }
     }
 }

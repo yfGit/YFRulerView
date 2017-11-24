@@ -15,6 +15,8 @@
 		BF6DB3BD1FC5512900674B73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6DB3BC1FC5512900674B73 /* main.m */; };
 		BF6DB3C81FC5514700674B73 /* YFRulerContainView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6DB3C51FC5514700674B73 /* YFRulerContainView.m */; };
 		BF6DB3C91FC5514700674B73 /* YFRulerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6DB3C61FC5514700674B73 /* YFRulerView.m */; };
+		BF6DB3CC1FC7B44800674B73 /* RulerBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6DB3CB1FC7B44800674B73 /* RulerBtn.m */; };
+		BF6DB3CF1FC7EE2400674B73 /* WaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6DB3CE1FC7EE2400674B73 /* WaveView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		BF6DB3C51FC5514700674B73 /* YFRulerContainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFRulerContainView.m; sourceTree = "<group>"; };
 		BF6DB3C61FC5514700674B73 /* YFRulerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFRulerView.m; sourceTree = "<group>"; };
 		BF6DB3C71FC5514700674B73 /* YFRulerContainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFRulerContainView.h; sourceTree = "<group>"; };
+		BF6DB3CA1FC7B44800674B73 /* RulerBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RulerBtn.h; sourceTree = "<group>"; };
+		BF6DB3CB1FC7B44800674B73 /* RulerBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RulerBtn.m; sourceTree = "<group>"; };
+		BF6DB3CD1FC7EE2400674B73 /* WaveView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaveView.h; sourceTree = "<group>"; };
+		BF6DB3CE1FC7EE2400674B73 /* WaveView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaveView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,10 @@
 				BF6DB3AE1FC5512900674B73 /* AppDelegate.m */,
 				BF6DB3B01FC5512900674B73 /* ViewController.h */,
 				BF6DB3B11FC5512900674B73 /* ViewController.m */,
+				BF6DB3CA1FC7B44800674B73 /* RulerBtn.h */,
+				BF6DB3CB1FC7B44800674B73 /* RulerBtn.m */,
+				BF6DB3CD1FC7EE2400674B73 /* WaveView.h */,
+				BF6DB3CE1FC7EE2400674B73 /* WaveView.m */,
 				BF6DB3B31FC5512900674B73 /* Main.storyboard */,
 				BF6DB3B61FC5512900674B73 /* Assets.xcassets */,
 				BF6DB3B81FC5512900674B73 /* LaunchScreen.storyboard */,
@@ -161,8 +171,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF6DB3B21FC5512900674B73 /* ViewController.m in Sources */,
+				BF6DB3CF1FC7EE2400674B73 /* WaveView.m in Sources */,
 				BF6DB3BD1FC5512900674B73 /* main.m in Sources */,
 				BF6DB3AF1FC5512900674B73 /* AppDelegate.m in Sources */,
+				BF6DB3CC1FC7B44800674B73 /* RulerBtn.m in Sources */,
 				BF6DB3C91FC5514700674B73 /* YFRulerView.m in Sources */,
 				BF6DB3C81FC5514700674B73 /* YFRulerContainView.m in Sources */,
 			);

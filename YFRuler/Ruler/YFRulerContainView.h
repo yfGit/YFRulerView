@@ -42,8 +42,7 @@
 /**
  配置标尺信息
 
- 使用 layoutSubviews时(打开注释), 直接在 YFRulerView 配置好
- 不使用(显示的信息网络或其他方式确定), 注释layoutSubviews, 再调用方法
+ xib 默认已加载
  @param rulerView 配置
  */
 - (void)redrawRuler:(YFRulerView *)rulerView;
